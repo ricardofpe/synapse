@@ -1,9 +1,16 @@
+import ChatMessage from "./components/ChatMessage";
+
 function App() {
   return (
     <>
       <div className="p-5 h-screen bg-black">
         <div className="container mx-auto bg-gray-900 h-full flex flex-col">
-          <div className="flex-grow"></div>
+          <div className="flex-grow flex flex-row items-end p-3">
+            <div className="w-full">
+              <ChatMessage type={"send"} message={"Hey how are you?"} />
+              <ChatMessage type={"receive"} message={"Hey how are you?"} />
+            </div>
+          </div>
           <div className="h-[100px] p-3 flex justify-center items-center bg-gray-700">
             <input
               type="text"
