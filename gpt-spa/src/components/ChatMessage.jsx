@@ -1,21 +1,23 @@
 import React from "react";
 
-export default function ChatMessage({ message, type }) {
+const ChatMessage = ({ message, type }) => {
   return (
     <div
-      className={`flex w-full ${
-        type === "send" ? "justify-start" : "justify-end"
+      className={`flex w-full my-1 ${
+        type === "send" ? "justify-end" : "justify-start"
       }`}
     >
-      {type === "send" ? (
-        <div className="bg-violet-500 p-2 rounded-b-lg rounded-tr-lg text-white">
-          {message}
-        </div>
-      ) : (
-        <div className="bg-white p-2 rounded-b-lg rounded-tr-lg text-black">
-          {message}
-        </div>
-      )}
+      <div
+        className={`rounded-xl py-2 px-3 max-w-2/3 break-words text-sm sm:text-base ${
+          type === "send"
+            ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white"
+            : "bg-gray-200 text-gray-800"
+        }`}
+      >
+        {message}
+      </div>
     </div>
   );
-}
+};
+
+export default ChatMessage;
